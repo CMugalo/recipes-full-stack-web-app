@@ -12,4 +12,13 @@ class Config:
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = "sqlite:///"+os.path.join(BASE_DIR, 'dev.db')
-    DEBUG=True
+    DEBUG = True
+    SQLALCHEMY_ECHO = True
+
+
+class ProdConfig(Config):
+    pass
+
+
+class TestConfig(Config):
+    pass
