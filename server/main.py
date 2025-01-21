@@ -62,8 +62,13 @@ class RecipeResource(Resource):
 
         return recipe_to_update
 
+    @api.marshal_with(recipe_model)
     def delete(self, id):
-        pass
+        recipe_to_delete = Recipe.query.get_or_404(id)
+
+        recipe_to_delete.delete()
+
+        return recipe_to_delete
 
 
 @app.shell_context_processor
