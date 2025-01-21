@@ -11,7 +11,7 @@ app.config.from_object(DevConfig)
 db.init_app(app)
 
 migrate = Migrate(app, db)
-
+ 
 api = Api(app, doc='/docs')
 
 recipe_model = api.model("Recipe", {
